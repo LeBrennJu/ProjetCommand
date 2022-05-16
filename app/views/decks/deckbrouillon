@@ -1,0 +1,41 @@
+
+
+                <!-- <?php foreach ($ninjaEnchants as $enchant): ?>             
+                    
+                    <div class="cards">
+                        <a href="<?= $router->generate('details-enchantement',['id'=> $enchant->getId()]) ?>">
+                        <img class="carteTypes" src="../public/assets/img/Enchantements/<?= $enchant->getPicture() ?>.jpg" alt="">
+                        </a>
+                    </div>                
+                <?php endforeach ?>
+
+                <?php foreach ($ninjaArtefacts as $artefact): ?>             
+                    
+                    <div class="cards">
+                        <a href="<?= $router->generate('details-artefact',['id'=> $artefact->getId()]) ?>">
+                        <img class="carteTypes" src="../public/assets/img/Artefact/<?= $artefact->getPicture() ?>.jpg" alt="">
+                        </a>
+                    </div>                
+                <?php endforeach ?>
+
+                <?php foreach ($ninjaEphemeres as $ephemere): ?>             
+                    
+                    <div class="cards">
+                        <a href="<?= $router->generate('details-Éphémère',['id'=> $ephemere->getId()]) ?>">
+                        <img class="carteTypes" src="../public/assets/img/Éphémère/<?= $ephemere->getPicture() ?>.jpg" alt="">
+                        </a>
+                    </div>                
+                <?php endforeach ?> -->
+                <div class="presentDeck">
+                <h3>Dimir <img class="imgDetail" src="../public/assets/img/couleurs/bleu.jpg" alt=""> <img class="imgDetail" src="../public/assets/img/couleurs/noir.jpg" alt=""> Deck Ninja </h3> 
+                <div class="countEnchants "></div>
+                <div class="countArtefacts "></div>
+                <div class="countRituels "></div>
+                <div class="countEphemeres "></div>
+                <div class="countEnchant "></div>
+                </div>
+
+
+
+                38 terrain
+                62 active 

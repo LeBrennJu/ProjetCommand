@@ -1,0 +1,480 @@
+body{
+    font-size: larger;
+    background-image: url(../img/kamigawapaint.jpg);
+    font-family: 'Playfair Display', serif;
+    color:white;
+    background-position: center top;
+    background-size: 100% auto;
+}
+@import 'assets/css/dist/pretty-checkbox.min.css';
+
+footer{
+        background-color: #aae0fa;
+        border: 4px solid #ff000029;
+        border-radius: 1vh;
+        text-align: center;
+        color: gold;
+        background-image: url(../img/bgGrey.jpg); 
+        margin-left: 2%; 
+        margin-right: 2%;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.deckImg:hover{
+    opacity: unset;
+    transition: none;
+}
+/*NAV STYLES*/
+.bg-light{
+    background-color: unset;
+}
+
+/*<----------------------------------------------- TYPES STYLES---------------------------------> */
+
+.wrapperTypes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 3%;
+    padding-top: 3%;
+}
+h1{
+    font-size: xx-large;
+    border-radius: 20px;
+    font-weight: bolder;
+    background-color:#18171B ;
+    border: 4px solid #ff000029;;
+    border-radius: 1vh;
+    cursor:pointer;
+    background-image: url(../img/bgGrey.jpg);
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.cards{
+    margin: 8px;
+    text-align: center;
+    background-color: #18171B;
+    border: 2px solid white;
+    border-radius: 1vh;
+    color: white;
+    height: fit-content;
+    width: min-content;
+    position: relative;
+}
+img.carteTypes {
+    width: 25vh;
+    height: 38vh;
+}
+.contenu {
+    background-color: #65749600;
+    margin: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+h1 + .contenu {
+    max-height: 0;
+}
+.detailDivAdd + .contenu {
+    max-height: 0;
+}
+.open + .contenu {
+    max-height: 100%;
+}
+h1.open {
+    filter: brightness(1.75);
+}
+/* <---------------------------------------DETAIL STYLES-------------------------------> */
+.wrapperDetail{
+    background-color: #ff000029;
+    color: white;
+    border-top: 4px solid white;
+    border-bottom: 4px solid white;
+    border-radius: 1vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    justify-content: space-between;
+    line-height: 2vh;
+    position: relative;
+    padding-left: 20%;
+    width: 100%;
+
+}
+.detail{
+    display: flex;
+    justify-content: space-evenly;
+}
+.detailDivAdd:hover{
+    filter: brightness(1.75);
+}
+.strongDetail{
+    color: #18171B;
+    position: absolute;
+    left: 6%;
+    font-size: large;
+    font-weight: bold;
+    font-style: italic;
+    
+}
+.imgDetail{
+    background-color: #18171B;
+    border-radius: 15vh;
+    width: 2vh;    
+}
+.imgGaucheDetail{
+    width: 25vh;
+    height: 38vh;
+}
+img.valeurMana{
+    background-color: #18171B;
+    border-radius: 15vh;
+    width: 2vh;
+}
+.detailFlavor{
+    font-style: italic;
+}
+.detailText{
+    padding-right: 7%;
+}
+.variableStats{
+    margin-left: 1%;
+}
+.detailDeckUpdate{
+    width: 93%;
+}
+.wrapperAdd{
+    display: inline-flex;
+}
+.formCollect {
+    position: absolute;
+    right: 1%;
+    top: 10%;
+    background-color: #18171B;
+    margin-top: 1vh;
+    color:#18171B;
+    border: 4px solid white;
+    border-radius: 1vh;
+    padding: 1vh;
+    color: white;
+
+}
+/*<-----------------------------DECK STYLES------------------------------>*/
+
+.commandant{
+    background-color: #18171B;
+    margin-top: 1vh;
+    color:#18171B;
+    border: 4px solid white;
+    border-radius: 1vh;
+    display: inline-flex;
+    width: 50%;
+    background-position: left;
+    background-size: cover;
+    contain: content;
+    position: relative;
+}
+.commandantImage{
+    width: 70%;
+    float: left;
+    box-sizing: border-box;
+    margin: 1vh;
+    position: absolute;
+    bottom: 0;
+  
+}
+.conteneur-flexbox {
+    display: flex;
+    width: 30%;
+}
+.wrapperDeck{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;  
+    background-color: #00000099;
+    padding-top: 3%;
+    padding-bottom: 3%;  
+}
+.presentDeck{
+    background-color: #18171B;
+    color: white;
+}
+strong.strongCount {
+    position: absolute;
+    margin: 1.5%;
+}
+.countCard {
+    margin-left: 1vh;
+    font-weight: bolder;
+}
+.deleteBtn{
+        width: 13%;
+        position: absolute;
+        right: 0;
+}
+input[type="submit"]{
+    background-image:url(../img/del.jpg) ;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+}
+input[type="checkbox"]{
+    width: auto;
+    font-family:'Playfair Display', serif;
+    margin-bottom:1%;
+}
+input[type="checkbox"]/:checked{
+    color: red;
+}
+label::before{
+    
+    background-image:url(../img/del.jpg) ;
+}
+.cardListDeck{
+    overflow: hidden;
+    border: 1px solid;
+    position: relative;
+    border-radius: 1vh;
+    background-position:center;
+    color: #b5daff;
+    font-size: small;
+    font-weight: 900;
+}
+.cardListDeck:hover{
+filter: brightness(1.75);
+}
+.imgDeckList{
+    transform: scale(0.2);
+}
+.backgroundDeckList{
+    display: inline-block;    
+    background-image: url(../img/bgGrey.jpg);    
+}
+::-webkit-scrollbar {
+    display: none;
+    }
+/*<--------------------------------RARITY BALL----------------------------------------------->*/
+.rarityBall{
+    font-weight: normal;
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    float: left;
+    margin-top: 8px;
+    margin-right: 5px;
+    position: absolute;
+    right: 0;
+}
+.rarityBall{
+    background-color: silver;
+}
+.rarityBall.Rare{
+    background-color: #ffd700;
+}
+.rarityBall.Commun{
+    background-color: #000;
+}
+.rarityBall.Mythique{
+    background-color: #d06d34;
+}
+/*<--------------------------------LISTE DECKS------------------------------->*/
+.listDeckManuscrit{
+display: inline-flex;
+flex-wrap: wrap;
+margin-top: 1%;
+font-family: 'Playfair Display', serif;
+background-color: #18171b;
+    overflow: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+border: 1px solid #aae0fa;
+border-radius: 1vh;
+font-size: initial;
+}
+.liCrea {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 20VH;
+}
+h4{
+    color: #aae0fa;
+    font-size: large;
+    font-weight: bold;
+    padding-bottom:6px;
+    padding-top:6px;
+}
+.detailDeck img.imgDetail{
+    width: 1vh;
+}
+.detailDeck img.valeurMana{
+    width: 1vh;
+}
+/*<------------------------------------ STATS DECKS--------------------------> */
+.firstBarre{
+    background-color: #aae0fa;
+    width: 100px;
+    height: 2vh;
+    margin-top: 1vh;
+    margin-right: 1vh;
+    border: 4px solid white;
+    border-radius: 1vh;
+    display: flex;
+}
+.equipBarreRed{
+    background-color: #f9a98e;
+}
+.barre{
+    width: 20%;
+    position: absolute;
+    right: 68px;
+    bottom: 0;
+}
+.firstBarreCost{
+    background-color: #aae0fa;
+    height: 2vh;
+    margin-top: 1vh;
+    margin-right: 1vh;
+    border: 4px solid white;
+    border-radius: 1vh;
+    display: flex;
+}
+.secondBarre{
+    background-color:#18171B ;
+    
+    border-top-left-radius: 1vh;
+    border-bottom-left-radius: 1vh;
+    
+}
+.thirdBarre{
+    background-color:#ccc2c0  ;
+}
+.fourthBarre{
+    background-color:#99d3ac ;
+}
+.fiveBarre{
+    background-color: #f9a98e;
+}
+.sixBarre{
+    background-color:#fdf9d4 ;
+}
+.sixBarreMonstre{
+    background-color:#fdf9d4 ;
+    font-size: xx-small;
+}
+.sevenBarre{
+    background-color: red;
+}
+.wrapperVariable{
+    display: flex;
+    width: 40%;
+}
+.variable1{
+    height: 10%;
+    background-color: #fdf9d4;
+}
+.variable2{
+    height: 25%;
+    background-color: #a9dff9;
+}
+.variable3{
+    height: 45%;
+    background-color: #18171B;
+}
+.variable4{
+    height: 15%;  
+    background-color: #f9a98e;
+}
+.variable5{ 
+    height: 10%;
+    background-color: #99d3ac;
+}
+.variable6{
+    height: 5%;
+    background-color:#ccc2c0 ;
+}
+.valeurManaDeck{
+    background-color: #18171B;
+    border-radius: 15vh;
+    width: 1vh;
+    margin-bottom: 1vh;
+}
+.var{
+    margin: 3px;
+    border-bottom-left-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+}
+.texteDeck{
+    margin-top: 1vh; 
+    margin-right: 1vh;
+    font-size: x-large;
+    font-weight: bold;
+
+}
+.pretty2{
+    position: absolute;
+    right: 0;
+}
+/*<---------------------------------ADD DECK-------------------------->*/
+.wrapperAdd{
+    display: flex;
+    }
+.btn.btn {
+display: inline-block;
+text-decoration: none;
+border-radius: 40px;
+background: #34495E;
+transition: all .4s;
+color: white;
+
+}
+
+.btn.btn:hover,
+.btn.btn:focus {
+background: #000;
+}
+/*<--------------------COMMANDANTS--------------------->*/
+img.del {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2%;
+}
+
+
+
+  /*MEDIA QUERIES*/
+  @media (max-width: 620px) { 
+
+    .box{
+        position: unset;
+    }
+    .commandantImage{
+        float: left;
+        box-sizing: border-box;
+        margin: 1vh;
+        position: absolute;
+        bottom: 0px;
+        left: 1px;
+        width: 40%;
+    }
+    .commandant{
+        width: 100%;
+    }
+  }
+  @media (max-width: 400px){
+      .commandantImage{
+        height: 75%;
+        width: 45%;
+      }
+      .listDeckManuscrit{
+          flex-direction: column;
+      }
+  }
