@@ -54,11 +54,11 @@ class Decks extends CoreModel
 
         return $results;
     }
-    public function selectedDeck($deck)
+    public function selectedDeck($userDeck,$deck)
     {
         $pdo = Database::getPDO();
         $sql = "
-        select * from `decks` where `name`='$deck'
+        select * from $userDeck where `name`='$deck'
         ";
         $pdoStatement = $pdo->query($sql);
         $results = $pdoStatement->fetchObject(self::class);

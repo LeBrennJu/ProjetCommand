@@ -18,10 +18,10 @@ class DeckController extends CoreController
     public function deck($deck)
     {
         $user=$_SESSION['connectedUser']->getIdentifiant();
-        
+        $userDeck=$user."decks";
         $decks=new Decks();
         $selectDecks=$decks->selectDeck($user,$deck);
-        $paramDeck=$decks->selectedDeck($deck);
+        $paramDeck=$decks->selectedDeck($userDeck,$deck);
         $findDeck=$decks->findDeck($deck);
         $allNinja=$decks->findNinja($deck);
         //Couleur
@@ -51,7 +51,6 @@ class DeckController extends CoreController
     }
     public function deckPost($deck)
     {
-        
         $id=$_POST['id'];
         global $router;
         $sql=" DELETE FROM $deck WHERE `id` = '$id' " ;
@@ -122,9 +121,9 @@ class DeckController extends CoreController
             `texte3` text DEFAULT NULL,
             `detail_id` int(11) NOT NULL
             )";
-       
+        $decks=$_SESSION['connectedUser']->getIdentifiant()."decks";
         $pdo->exec($sql);
-        $sql="INSERT INTO decks (name, color1, color2, color3, color4, commandant, commandant2, image)
+        $sql="INSERT INTO {$decks} (name, color1, color2, color3, color4, commandant, commandant2, image)
         VALUES ('$deckName', '$color1', '$color2', '$color3', '$color4', '$commandant', '$commandant2', '$image')";
         $pdoStatement = $pdo->prepare($sql);
         if ($pdoStatement->execute()){
@@ -219,6 +218,7 @@ class DeckController extends CoreController
     }
     public function deckDelete($deck,$id)
     {
+        
         $select=new Decks();
         $selectCard=$select->findCard($deck,$id);
         $commandant=$select->findCommand($deck);
@@ -226,6 +226,7 @@ class DeckController extends CoreController
     }
     public function deckDeletePost($deck,$id){
         global $router;
+        
         $sql=" DELETE FROM $deck WHERE `id` = '$id' " ;
         $pdo = Database::getPDO();
         if ($pdo->query($sql)){

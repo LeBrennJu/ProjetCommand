@@ -1,4 +1,4 @@
-<?php $color="";$cout=""?>
+<?php $color="";$cout="";?>
 <form action="" method="POST" style="display: flex;background-color: #00000099;margin-right:4%;margin-left:4%;border-left: 2px solid;border-right: 2px solid;;flex-wrap:wrap">
 <div style="width:100%;height:5%;background-color: #ff000029;padding-top: 1%;border-top: 1px solid;border-bottom: 1px solid;margin-top: 2%;"></div>
             <div class="triCollect" style="display: flex;flex-direction:column;margin-left: 3%;border: 1px solid;background-color: #ff000029;border-bottom: unset;border-top:unset">           
@@ -28,7 +28,7 @@
                 <?php foreach ($allCollect as $card): ?>
                             
                             <div class="cards">
-                                <div class="pretty p-default pretty2 <?= $card->getName() ?>" style="bottom:0;right:-5%" ><input type="checkbox" name='id' id="check<?= $card->getId() ?>" value="<?=$card->getId()?>" /><div class="state p-danger"><label></label></div></div>
+                                <div class="pretty p-default pretty2 <?= $card->getName() ?>" style="bottom:0;right:-5%" ><input onclick=checkBoxMoove() class="checkCollect" type="checkbox" name='id' id="check<?= $card->getId() ?>" value="<?=$card->getId()?>" /><div class="state p-danger"><label></label></div></div>
                                 
                                 
                                 <a href="<?= $router->generate('details-collect',['type'=>$card->getType(),'id'=> $card->getId()]) ?>">                    

@@ -1,6 +1,6 @@
   <div style="    background-color: #00000099;margin-right: 2%; margin-left: 2%;    border-left: 1px solid; border-right: 1px solid;padding-top: 3%;"> 
     <div>
-        <h1 class="" style="cursor:pointer;">Créatures <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/creature.png" alt=""> </h1>
+        <h1 class="" style="cursor:pointer;"> <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/creature.png" alt=""> </h1>
     
         <div class="contenu wrapperTypes">              
             <?php foreach ($allCards as $creature): ?>
@@ -17,7 +17,7 @@
     </div>
 
     <div>
-        <h1 style="cursor:pointer;">Ephémères <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/ephemere.png" alt=""> </h1>
+        <h1 style="cursor:pointer;"> <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/ephemere.png" alt=""> </h1>
     <div class="contenu wrapperTypes">              
         <?php foreach ($allCards as $ephemere): ?>
             <?php if($ephemere->getType()=="Ephemere"):?>
@@ -33,7 +33,7 @@
     </div>
 
     <div>
-        <h1 class="3h1Type" style="cursor:pointer;">Rituels <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/rituel.png" alt="">  </h1>
+        <h1 class="3h1Type" style="cursor:pointer;"> <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/rituel.png" alt="">  </h1>
             <div class="contenu wrapperTypes">   
                 <?php foreach ($allCards as $rituel): ?>
                     <?php if($rituel->getType()=="Rituel"):?>
@@ -50,7 +50,7 @@
     </div>
 
     <div>
-        <h1 class="4h1Type" style="cursor:pointer;">Planeswalkers <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/planeswalkers.png" alt=""> </h1>
+        <h1 class="4h1Type" style="cursor:pointer;"> <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/planeswalkers.png" alt=""> </h1>
             <div class="contenu wrapperTypes">   
                     <?php foreach ($allCards as $planeswalkers): ?>
                         <?php if($planeswalkers->getType()=="Planeswalkers"):?>
@@ -67,7 +67,7 @@
     </div>
 
     <div>
-        <h1 class="5h1Type" style="cursor:pointer;">Enchantements <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/enchantement.png" alt="">  </h1>
+        <h1 class="5h1Type" style="cursor:pointer;"> <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/enchantement.png" alt="">  </h1>
         <div class="contenu wrapperTypes">   
                 <?php foreach ($allCards as $enchant): ?>
                     <?php if($enchant->getType()=="Enchantements"):?>
@@ -84,7 +84,7 @@
     </div>
 
     <div>
-        <h1 class="6h1Type" style="cursor:pointer;">Artefacts <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/artefact.png" alt=""> </h1>
+        <h1 class="6h1Type" style="cursor:pointer;"> <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/artefact.png" alt=""> </h1>
         <div class="contenu wrapperTypes">   
                 <?php foreach ($allCards as $artefact): ?>
                     
@@ -101,7 +101,7 @@
     </div>
 
     <div>
-        <h1 class="7h1Type" style="cursor:pointer;">Terrains <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/terrain.png" alt=""> </h1>
+        <h1 class="7h1Type" style="cursor:pointer;"> <img class="carteTypes" style="width:unset;height: 2VH;"src="../public/assets/img/icone/terrain.png" alt=""> </h1>
             <div class="contenu wrapperTypes">   
                 <?php foreach ($allCards as $land):?>
                     <?php if($land->getType()=="Terrain"):?>

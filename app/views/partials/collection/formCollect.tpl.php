@@ -37,7 +37,14 @@
                                         
                                     </div>                                                      
                             </div>  
-                              <div class="contenu">COUCOUCOUCOUCOU</div>  
+                              <div class="contenu contenuFormCollect cardListDeck detailDivAdd" style="flex-wrap:unset;display:flex;position:relative;">
+                              <?php foreach ($allCollect as $ninja): ?> 
+                                <?php if($ninja->getId==$idCheck):?>
+                                <?= $ninja->getName()?>
+                                <?php endif?>
+                                <?php endforeach ?>
+                              </div>
+                              
                             <?php endforeach ?>
                     </div>
                 </div>

@@ -145,7 +145,22 @@ class User extends CoreModel
 
         // On exécute la requête préparée
         $ok = $pdoStatement->execute();
-
+        $identifiant=$_POST["id"]."decks";
+        $sql="CREATE TABLE {$identifiant} (
+            `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            `name` varchar(64) NOT NULL,
+            `color1` text NOT NULL,
+            `color2` text DEFAULT NULL,
+            `color3` text DEFAULT NULL,
+            `color4` text DEFAULT NULL,
+            `color5` text DEFAULT NULL,
+            `commandant` varchar(64) NOT NULL,
+            `commandant2` varchar(64) DEFAULT NULL,
+            `image` varchar(64) NOT NULL            
+          )
+        ";
+        $pdoStatement = $pdo->prepare($sql);
+        $pdoStatement->execute();
         // Si au moins une ligne ajoutée
         if ($pdoStatement->rowCount() > 0) {
             // Alors on récupère l'id auto-incrémenté généré par MySQL

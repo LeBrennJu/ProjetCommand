@@ -25,10 +25,11 @@ class CommandantController extends CoreController
     }
     public function commandDelPost()
     {
+        $user=$_SESSION['connectedUser']->getIdentifiant()."decks";
         $deck=$_POST['deck'];
         $id=$_POST['id'];
         global $router;
-        $sql=" DELETE FROM `decks` WHERE `id` = '$id' " ;
+        $sql=" DELETE FROM $user WHERE `id` = '$id' " ;
         $pdo = Database::getPDO();
         if ($pdo->query($sql)){
             $sql=" DROP TABLE $deck ";

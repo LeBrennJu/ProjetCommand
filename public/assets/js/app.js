@@ -1,3 +1,9 @@
+
+
+
+
+
+
 //DETAIL
 listDeckDetail=document.getElementsByClassName("detailDivAdd")
 for (const divDeck of listDeckDetail) {
@@ -9,9 +15,18 @@ function handleDetail(e){
     console.log(divSelect)
     divSelect.classList.toggle("open")
 }
+//COLLECTION FORM
+inputCollect=document.getElementsByClassName('checkCollect')
+for (const checkbox of inputCollect) {
+    checkbox.addEventListener("click",checkBoxMoove)
+}
+formCollect=document.getElementsByClassName('contenuFormCollect')
 
-
-
+function checkBoxMoove(e){
+    idCheck=e.currentTarget
+    console.log(idCheck.value)
+    return idCheck
+}
 
 
 
@@ -33,7 +48,7 @@ for (const btn of btnList) {
 function changeHover(event)
 {
     cibleHover=event.currentTarget.id
-    galleryDeck.src= "http://localhost/Commander/public/assets/img/"+cibleHover
+    galleryDeck.src= "http://localhost/copieCommander/Commander/ProjetCommand/public/assets/img/"+cibleHover
     console.log(event.currentTarget)
 }
 
@@ -44,9 +59,10 @@ for (const arrowH of arrowBtnH) {
 }
        
 function handleClick(event){
-    console.log(event)
+    console.log(event.currentTarget)
     const hSelect=event.currentTarget
     hSelect.classList.toggle("open")
+    hSelect.classList.toggle("bgGrey")
 }
 //CREATION DE DECK IMG
 const selectOptn= document.getElementById("nameCommandant")

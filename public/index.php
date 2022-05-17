@@ -183,7 +183,7 @@ $router->map(
 //DECK CREATE
 $router->map(
     'GET',
-    '/add',
+    '/deck/add',
     [
         'method' => 'deckAdd',
         'controller' => 'DeckController'
@@ -192,7 +192,7 @@ $router->map(
 );
 $router->map(
     'POST',
-    '/add',
+    '/deck/add',
     [
         'method' => 'deckAddPost',
         'controller' => 'DeckController'

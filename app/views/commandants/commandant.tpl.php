@@ -1,11 +1,12 @@
 <!-- PHP -->
 
 <!-- HTML -->
-
-<div class="paddingDiv" style="padding-top:2%;background-color:#00000099"></div>
+<div class="testFond" style="background-color: #ff000029;height: 100%;position: absolute;width: 1%;right: 1%;border-left: 1px solid;border-right: 1px solid;"></div>
+<div class="testFond" style="background-color: #ff000029;height: 100%;position: absolute;width: 1%;left: 1%;border-left: 1px solid;border-right: 1px solid;"></div>
+<div class="paddingDiv" style="padding-top:2%;background-color:#00000099;margin-left: 2%;margin-right: 2%;"></div>
 <?php foreach ($listeDeck as $deckList):;?>
 
-    <h1 style=""><?= $deckList->getCommandant()?> <?php if($deckList->getCommandant2()!=NULL): ?>& <?= $deckList->getCommandant2()?>  <?php endif; ?>
+    <h1 class="h1Command" style="cursor: unset"><?= $deckList->getCommandant()?> <?php if($deckList->getCommandant2()!=NULL): ?>& <?= $deckList->getCommandant2()?>  <?php endif; ?>
         <img class="imgDetail" src="../public/assets/img/couleurs/<?= $deckList->getColor1()?>.jpg" alt="">
         <?php if (($deckList->getColor2())!=NULL):?>
             <img class="imgDetail" src="../public/assets/img/couleurs/<?= $deckList->getColor2()?>.jpg" alt="">
@@ -51,5 +52,6 @@
             </form>
     </div>
     </div>
-    </div>    
+    </div> 
+    
 <?php endforeach ?>
