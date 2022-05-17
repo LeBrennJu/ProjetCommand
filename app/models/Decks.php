@@ -67,10 +67,13 @@ class Decks extends CoreModel
     }
     public function allDeck()
     {
+        if(isset($_SESSION['connectedUser'])):
+        $user=$_SESSION['connectedUser']->getIdentifiant()."decks";
+        endif;
         $pdo = Database::getPDO();
-        $sql = '
-        select * from `decks` 
-        ';
+        $sql = "
+        select * from $user 
+        ";
         $pdoStatement = $pdo->query($sql);
         $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS,'App\models\Decks');
 

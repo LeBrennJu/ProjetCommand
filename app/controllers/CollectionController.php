@@ -22,26 +22,36 @@ class CollectionController extends CoreController
         $orderCollect=$collect->orderCollect($color,$id);
         $collectColor=$collect->collectColor($color);
         $collectCost6Plus=$collect->collect6PlusColor($color);
-        $select=new Decks();
-        $listeDeck=$select->allDeck();
-
+        if(isset($_SESSION['connectedUser'])):
+            $select=new Decks();
+            $listeDeck=$select->allDeck();
+        else:
+            $listeDeck="";
+        endif;
         $this->show('collection/collectionOrder',['orderCollect'=>$orderCollect,'$color'=>$color,'collectColor'=>$collectColor,'$cout'=>$id,'listeDeck'=>$listeDeck,'collectCost6Plus'=>$collectCost6Plus]);
     }
     public function collection()
     {
         $collect=new Collection();
         $allCollect=$collect->findCollect();
+         if(isset($_SESSION['connectedUser'])):
         $select=new Decks();
         $listeDeck=$select->allDeck();
-
+         else:
+            $listeDeck="";
+        endif;
         $this->show('collection/collection',["allCollect"=>$allCollect,'listeDeck'=>$listeDeck]);
     }
     public function collectionColor($color)
     {
         $collect= new Collection();
         $collectColor=$collect->collectColor($color);
+        if(isset($_SESSION['connectedUser'])):
         $select=new Decks();
         $listeDeck=$select->allDeck();
+        else:
+        $listeDeck="";
+        endif;
         $this->show('collection/collectionColor',['collectColor'=>$collectColor,'color'=>$color,'listeDeck'=>$listeDeck]);
     }
     public function collectionCost($cout)
@@ -50,8 +60,12 @@ class CollectionController extends CoreController
         $collectCost=$collect->collectCost($cout);
         //NEW NEW 
         $collectCost6Plus=$collect->collect6Plus();
+        if(isset($_SESSION['connectedUser'])):
         $select=new Decks();
         $listeDeck=$select->allDeck();
+        else:
+        $listeDeck="";
+        endif;
         $this->show('collection/collectionCost',['collectCost'=>$collectCost,'id'=>$cout,'listeDeck'=>$listeDeck,'collectCost6Plus'=>$collectCost6Plus]);
     }
     public function collectionPost()

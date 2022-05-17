@@ -479,10 +479,11 @@ class CoreModel
     //NAV DECK
     public function navDecks()
     {
+        $user=$_SESSION['connectedUser']->getIdentifiant()."decks";
         $pdo = Database::getPDO();
-        $sql = '
-        select * from `decks` '
-        ;
+        $sql = "
+        select * from $user 
+        ";
         $pdoStatement = $pdo->query($sql);
         $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS,self::class);
 

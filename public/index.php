@@ -2,7 +2,7 @@
 
 
 require_once '../vendor/autoload.php';
-
+session_start();
 /* ------------
 --- ROUTAGE ---
 -------------*/
@@ -17,6 +17,53 @@ if (array_key_exists('BASE_URI', $_SERVER)) {
 
     $_SERVER['BASE_URI'] = '/';
 }
+//<----------------ROUTE UTILISATEURS---------->
+$router->map(
+    'GET',
+    '/log',
+    [
+        'method' => 'log',
+        'controller' => 'UserController'
+    ],
+    'log-log'
+);
+$router->map(
+    'POST',
+    '/log',
+    [
+        'method' => 'logPost',
+        'controller' => 'UserController'
+    ],
+    'log-logPost'
+);
+$router->map(
+    'GET',
+    '/logout',
+    [
+        'method' => 'logout',
+        'controller' =>'UserController'
+    ],
+    'log-logout'
+);
+$router->map(
+    'GET',
+    '/add',
+    [
+        'method' => 'add',
+        'controller' => 'UserController'
+    ],
+    'add-add'
+);
+$router->map(
+    'POST',
+    '/add',
+    [
+        'method' => 'addPost',
+        'controller' => 'UserController'
+    ],
+    'add-addPost'
+);
+
 // <---------------ROUTE COLLECTION------------>
 // COULEURS && COUTS
 $router->map(

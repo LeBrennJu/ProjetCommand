@@ -17,8 +17,10 @@ class DeckController extends CoreController
 {
     public function deck($deck)
     {
+        $user=$_SESSION['connectedUser']->getIdentifiant();
+        
         $decks=new Decks();
-        $selectDecks=$decks->selectDeck($deck);
+        $selectDecks=$decks->selectDeck($user,$deck);
         $paramDeck=$decks->selectedDeck($deck);
         $findDeck=$decks->findDeck($deck);
         $allNinja=$decks->findNinja($deck);

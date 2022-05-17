@@ -39,6 +39,7 @@ a{
     flex-wrap: wrap;
     padding-left: 3%;
     padding-top: 3%;
+    font-size: small;
 }
 h1{
     font-size: xx-large;
@@ -62,6 +63,7 @@ h1{
     height: fit-content;
     width: min-content;
     position: relative;
+    overflow: hidden;
 }
 img.carteTypes {
     width: 25vh;
@@ -128,6 +130,9 @@ h1.open {
     width: 25vh;
     height: 38vh;
     border-radius: 2vh;
+}
+.imgGaucheDetail:hover{
+    opacity: unset;
 }
 img.valeurMana{
     background-color: #18171B;

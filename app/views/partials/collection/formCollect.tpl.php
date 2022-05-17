@@ -1,3 +1,4 @@
+<?php if(isset($_SESSION['connectedUser'])):?>
 <div class="wrapperDeckList" style="flex-wrap: wrap;display: flex;justify-content:space-evenly;flex-direction: row-reverse;list-style-type: auto;width:10%;margin-top: 4%;">
                     <div  class="detailDivAdd"style="overflow-y:scroll;display:inline-block;height: 36vh;margin-top:1%;;width: 15vh;position: fixed;;">
                             <?php foreach ($listeDeck as $ninja): ?>      
@@ -40,3 +41,4 @@
                             <?php endforeach ?>
                     </div>
                 </div>
+                <?php endif; ?>

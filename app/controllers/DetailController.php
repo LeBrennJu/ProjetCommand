@@ -18,14 +18,23 @@ class DetailController extends CoreController
     {
         $card=new Decks();
         $selectCard=$card->selectCard($deck,$id);
+        if(isset($_SESSION['connectedUser'])):
         $listeDeck=$card->allDeck();
+        else:
+        $listeDeck="";
+        endif;
+
         $this->show('details/detailCard',['selectCard'=>$selectCard,'listeDeck'=>$listeDeck,'id'=>$id]);
     }
     //COLLECTION->DETAIL
     public function deckCollect($id)
     {
         $collec=new Decks;
+        if(isset($_SESSION['connectedUser'])):
         $listeDeck=$collec->allDeck();
+        else:
+        $listeDeck="";
+        endif;
         $selectCard=$collec->selectCollect($id);
         $this->show('details/detailCard',['selectCard'=>$selectCard,'listeDeck'=>$listeDeck,'id'=>$id]);
     }
