@@ -17,7 +17,7 @@ if (array_key_exists('BASE_URI', $_SERVER)) {
 
     $_SERVER['BASE_URI'] = '/';
 }
-// <---------------ROUTE COLLECTION------------>
+// <---------------ROUTE COLLECTION------------>test
 // COULEURS && COUTS
 $router->map(
     'GET',
