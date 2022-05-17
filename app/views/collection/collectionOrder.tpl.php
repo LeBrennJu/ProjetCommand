@@ -1,6 +1,7 @@
-<?php $cout=(substr($_GET['page'], 31));$color=(substr($_GET['page'], 29, -2)) ;?>
-<form action="" method="POST" style="display: flex;background-color: #00000099;margin-right:4%;margin-left:4%;border-left: 2px solid;border-right: 2px solid;border-color: #ff000029;">
-        <div class="triCollect" style="display: flex;flex-direction:column;;margin-left: 3%;border: 1px solid;background-color: #ff000029; padding: 1%;border-bottom: unset;"> 
+<?php $cout=$viewData['$cout'];$color=$viewData['$color'];?>
+<form action="" method="POST" style="display: flex;background-color: #00000099;margin-right:4%;margin-left:4%;border-left: 2px solid;border-right: 2px solid;;flex-wrap:wrap">
+<div style="width:100%;height:5%;background-color: #ff000029;padding-top: 1%;border-top: 1px solid;border-bottom: 1px solid;margin-top: 2%;"></div>
+            <div class="triCollect" style="display: flex;flex-direction:column;margin-left: 3%;border: 1px solid;background-color: #ff000029;border-bottom: unset;border-top:unset"> 
             <a href="<?= $router->generate('collection-collection') ?>">
             <img class="valeurMana all" src="../public/assets/img/couleurs/oeil.jpg" alt="">
             </a>

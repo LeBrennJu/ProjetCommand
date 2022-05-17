@@ -2,10 +2,10 @@
 
 <!-- HTML -->
 
-
+<div class="paddingDiv" style="padding-top:2%;background-color:#00000099"></div>
 <?php foreach ($listeDeck as $deckList):;?>
 
-    <h1 style="margin-top:1%;margin-bottom:1%;hover:unset;"><?= $deckList->getCommandant()?> <?php if($deckList->getCommandant2()!=NULL): ?>& <?= $deckList->getCommandant2()?>  <?php endif; ?>
+    <h1 style=""><?= $deckList->getCommandant()?> <?php if($deckList->getCommandant2()!=NULL): ?>& <?= $deckList->getCommandant2()?>  <?php endif; ?>
         <img class="imgDetail" src="../public/assets/img/couleurs/<?= $deckList->getColor1()?>.jpg" alt="">
         <?php if (($deckList->getColor2())!=NULL):?>
             <img class="imgDetail" src="../public/assets/img/couleurs/<?= $deckList->getColor2()?>.jpg" alt="">
@@ -20,6 +20,7 @@
             <img class="imgDetail" src="../public/assets/img/couleurs/<?= $deckList->getColor5()?>.jpg" alt="">
         <?php endif; ?>
     </h1>
+    <div style=" padding-top:2%; padding-bottom:2%;background-color: #00000099;margin-left: 2%;margin-right: 2%;border-left:1px solid;border-right:1px solid">
     <div class="commandant <?= $deckList->getCommandant()?>" style="cursor:pointer;background-image: url(./../public/assets/img/<?= $deckList->getImage()?>.jpg);margin-left: 8vh">
         <div  style="display:inline-flex;"onclick="document.location='<?= $router->generate('decks-deck',['deck'=>$deckList->getName()]) ?>'">
     
@@ -48,6 +49,7 @@
                 <div class="pretty p-default pretty2" style="right: -19px;width:0%;height:0%"><input type="checkbox" class="checkBoxCommand" name='deck' value="<?= $deckList->getName()?>" checked/><div class="state p-danger"><label></label></div></div>                
                 <input class ="btn btn-danger" value ="X" style="top:0%;right:-15px;left:unset;width:2%;padding-right:2vh;" type="submit" src="../public/assets/img/del.jpg">
             </form>
+    </div>
     </div>
     </div>    
 <?php endforeach ?>

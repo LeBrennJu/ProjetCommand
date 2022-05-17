@@ -19,7 +19,7 @@ class DetailController extends CoreController
         $card=new Decks();
         $selectCard=$card->selectCard($deck,$id);
         $listeDeck=$card->allDeck();
-        $this->show('details/detailCard',['selectCard'=>$selectCard,'listeDeck'=>$listeDeck]);
+        $this->show('details/detailCard',['selectCard'=>$selectCard,'listeDeck'=>$listeDeck,'id'=>$id]);
     }
     //COLLECTION->DETAIL
     public function deckCollect($id)
@@ -27,7 +27,7 @@ class DetailController extends CoreController
         $collec=new Decks;
         $listeDeck=$collec->allDeck();
         $selectCard=$collec->selectCollect($id);
-        $this->show('details/detailCard',['selectCard'=>$selectCard,'listeDeck'=>$listeDeck]);
+        $this->show('details/detailCard',['selectCard'=>$selectCard,'listeDeck'=>$listeDeck,'id'=>$id]);
     }
     //COLLECTION FORM
     public function selectCollectPost($type,$id)

@@ -22,23 +22,8 @@ class Collection extends CoreModel
     {
         $pdo = Database::getPDO();
         $sql = "
-        select * from `artefact` where `color_id`='$color' and `manacost`='$id'
-        union
-        select * from  `enchantement` where `color_id`='$color' and `manacost`='$id'
-        union 
-        select * from  `ephemere` where `color_id`='$color' and `manacost`='$id'
-        union
-        select * from  `rituel` where `color_id`='$color' and `manacost`='$id'
-        union
-        select * from  `lands` where `color_id`='$color' and `manacost`='$id'
-        union
-        select * from  `creature` where `color_id`='$color' and `manacost`='$id'
-        union
-        select * from  `creature` where `color_id`='$color' and `manacost`='$id'
-        union
-        select * from  `planeswalkers` where `color_id`='$color' and `manacost`='$id'
-        union
-        select * from  `planeswalkers` where `color_id`='$color' and `manacost`='$id'
+        select * from `cards` where `color_id`='$color' and `manacost`='$id'
+        
         
         "
         ;
@@ -51,21 +36,7 @@ class Collection extends CoreModel
     {
         $pdo = Database::getPDO();
         $sql = "
-        select * from `artefact` where `color_id`='$color'
-        union
-        select * from  `enchantement` where `color_id`='$color'
-        union 
-        select * from  `ephemere` where `color_id`='$color'
-        union
-        select * from  `rituel` where `color_id`='$color'
-        union
-        select * from  `lands` where `color_id`='$color'
-        union
-        select * from  `creature` where `color_id`='$color'
-        union        
-        select * from  `planeswalkers` where `color_id`='$color'
-        
-        
+        select * from `cards` where `color_id`='$color'
         
         order by `manacost`"
         ;
@@ -78,20 +49,8 @@ class Collection extends CoreModel
     {
         $pdo = Database::getPDO();
         $sql = "
-        select * from `artefact` where `manacost`= '$cout'
-        union
-        select * from  `enchantement` where`manacost`= '$cout'
-        union 
-        select * from  `ephemere` where `manacost`= '$cout'
-        union
-        select * from  `rituel` where `manacost`= '$cout'
-        union
-        select * from  `lands` where `manacost`= '$cout'
-        union
-        select * from  `creature` where `manacost`= '$cout'
-        union        
-        select * from  `planeswalkers` where `manacost`= '$cout'
-                
+        select * from `cards` where `manacost`= '$cout' 
+         order by `color_id`       
         "
         ;
         $pdoStatement = $pdo->query($sql);

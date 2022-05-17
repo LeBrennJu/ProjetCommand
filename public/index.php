@@ -17,7 +17,8 @@ if (array_key_exists('BASE_URI', $_SERVER)) {
 
     $_SERVER['BASE_URI'] = '/';
 }
-// ROUTE COLLECTION
+// <---------------ROUTE COLLECTION------------>
+// COULEURS && COUTS
 $router->map(
     'GET',
     '/collection/[a:color]/[i:id]',
@@ -27,6 +28,16 @@ $router->map(
     ],
     'collection-order'
 );
+$router->map(
+    'POST',
+    '/collection/[a:color]/[i:id]',
+    [
+        'method' => 'collectionPost',
+        'controller' => 'CollectionController'
+    ],
+    'collection-orderPost'
+);
+// ROUTE DE BASE
 $router->map(
     'GET',
     '/collection',
@@ -45,6 +56,7 @@ $router->map(
     ],
     'collection-collectionPost'
 );
+// COULEURS
 $router->map(
     'GET',
     '/collection/[a:color]',
@@ -55,6 +67,16 @@ $router->map(
     'collection-color'
 );
 $router->map(
+    'POST',
+    '/collection/[a:color]',
+    [
+        'method' => 'collectionPost',
+        'controller' => 'CollectionController'
+    ],
+    'collection-colorPost'
+);
+//COUTS
+$router->map(
     'GET',
     '/collections/[i:id]',
     [
@@ -63,7 +85,16 @@ $router->map(
     ],
     'collection-cost'
 );
-//ROUTE TYPES
+$router->map(
+    'POST',
+    '/collection/[i:id]',
+    [
+        'method' => 'collectionPost',
+        'controller' => 'CollectionController'
+    ],
+    'collection-costPost'
+);
+//<--------------ROUTE TYPES------------>
 $router->map(
     'GET',
     '/types',
@@ -199,7 +230,7 @@ $router->map(
 );
 $router->map(
     'POST',
-    '/detail/[a:type]/[i:id]',
+    '/detail/[i:id]',
     [
         'method' => 'deckUpdatePost',
         'controller' => 'DeckController'

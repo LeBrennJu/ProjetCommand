@@ -1,8 +1,8 @@
 <!-- PHP -->
 <?php $countBlack=count($black);$countCard=count($allNinja);$countArt=count($artefact);$countCreature=count($creatures);$allActive=count($allNinja);
-$countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFourth=count($fourth);$countFive=count($five);$countSixPlus=count($sixPlus)?>
+$countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFourth=count($fourth);$countFive=count($five);$countSixPlus=count($sixPlus);dump($viewData)?>
 <!-- HTML -->
-<h1 style="margin-top:2%">
+<h1 style="margin-top:2%" class="titreDeck">
         <?= $currentDeck ?> <img class="imgDetail" src="../public/assets/img/couleurs/<?= $paramDeck->getColor1()?>.jpg" alt="">
     <?php if (($paramDeck->getColor2())!=NULL):?>
         <img class="imgDetail" src="../public/assets/img/couleurs/<?= $paramDeck->getColor2()?>.jpg" alt="">
@@ -25,14 +25,14 @@ $countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFour
                         <div class="box">
                             <p class="click">ZOOM</p>
                             <a href="../public/assets/img/commandants/<?= $paramDeck->getCommandant()?>.jpg" data-lightbox="image-1" data-title="<?= $paramDeck->getCommandant()?>">
-                            <img class="commandantImage"src="../public/assets/img/commandants/<?= $paramDeck->getCommandant()?>.jpg"></img></a>
+                            <img class="commandantImage"src="../public/assets/img/commandants/<?= $paramDeck->getCommandant()?>.jpg" style="border-radius: 1vh"></img></a>
                         </div>
                         
                         <?php if (($paramDeck->getCommandant2())!=NULL):?>
                         <div class="box">
                             <p class="click">ZOOM</p>
                             <a href="../public/assets/img/commandants/<?= $paramDeck->getCommandant2()?>.jpg" data-lightbox="image-1" data-title="<?= $paramDeck->getCommandant2()?>">
-                            <img class="commandantImage"src="../public/assets/img/commandants/<?= $paramDeck->getCommandant2()?>.jpg"></img></a>
+                            <img class="commandantImage"src="../public/assets/img/commandants/<?= $paramDeck->getCommandant2()?>.jpg" style="border-radius: 1vh"></img></a>
                         </div>
                         <?php endif; ?>
                     
@@ -64,7 +64,7 @@ $countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFour
                 <div class="wrapperDeckList" style="flex-wrap: wrap;display: flex;justify-content:space-evenly;flex-direction: row-reverse;list-style-type: auto;">
                     <div  style="overflow-y:scroll;display:inline-block;height: 36vh;margin-top:1%;;width:35vh;">
 
-                            <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-image: url(./../public/assets/img/bgGrey.jpg);font-size:large">Créatures</div>                            
+                            <div class="titreList" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-color:#18171bde;font-size:large;">Créatures</div>                            
                             <?php foreach ($findDeck as $ninja): ?> 
                                 <?php if($ninja->getType()=="Creature"):?>     
                                 <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;background-image:  url(../public/assets/img/<?= $ninja->getType() ?>/<?= $ninja->getPicture() ?>.jpg);height: 6%;background-size:45vh">
@@ -83,7 +83,7 @@ $countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFour
                             <?php endif?>                                
                             <?php endforeach ?>
 
-                            <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-image: url(./../public/assets/img/bgGrey.jpg);font-size:large">Ephémères</div>                            
+                            <div class=" titreList" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-color:#18171bde;font-size:large">Ephémères</div>                            
                             <?php foreach ($findDeck as $ninja): ?> 
                                 <?php if($ninja->getType()=="Ephemere"):?>     
                                 <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;background-image:  url(../public/assets/img/<?= $ninja->getType() ?>/<?= $ninja->getPicture() ?>.jpg);height: 6%;background-size:45vh">
@@ -102,7 +102,7 @@ $countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFour
                             <?php endif?>                                
                             <?php endforeach ?>
 
-                            <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-image: url(./../public/assets/img/bgGrey.jpg);font-size:large">Rituels</div>                            
+                            <div class="titreList" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-color:#18171bde;font-size:large">Rituels</div>                            
                             <?php foreach ($findDeck as $ninja): ?> 
                                 <?php if($ninja->getType()=="Rituel"):?>     
                                 <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;background-image:  url(../public/assets/img/<?= $ninja->getType() ?>/<?= $ninja->getPicture() ?>.jpg);height: 6%;background-size:45vh">
@@ -121,7 +121,7 @@ $countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFour
                             <?php endif?>                                
                             <?php endforeach ?>
 
-                            <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-image: url(./../public/assets/img/bgGrey.jpg);font-size:large">Enchantements</div>                            
+                            <div class=" titreList" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-color:#18171bde;font-size:large">Enchantements</div>                            
                             <?php foreach ($findDeck as $ninja): ?> 
                                 <?php if($ninja->getType()=="Enchantements"):?>     
                                 <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;background-image:  url(../public/assets/img/<?= $ninja->getType() ?>/<?= $ninja->getPicture() ?>.jpg);height: 6%;background-size:45vh">
@@ -140,9 +140,9 @@ $countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFour
                             <?php endif?>                                
                             <?php endforeach ?>
 
-                            <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-image: url(./../public/assets/img/bgGrey.jpg);font-size:large">Artefacts</div>                            
+                            <div class="titreList" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-color:#18171bde;font-size:large">Planeswalkers</div>                            
                             <?php foreach ($findDeck as $ninja): ?> 
-                                <?php if($ninja->getType()=="Artefact"):?>     
+                                <?php if($ninja->getType()=="Planeswalkers"):?>     
                                 <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;background-image:  url(../public/assets/img/<?= $ninja->getType() ?>/<?= $ninja->getPicture() ?>.jpg);height: 6%;background-size:45vh">
                                 <div class="nameDeckList" id="<?= $ninja->getType() ?>/<?= $ninja->getPicture() ?>.jpg"style="display:inline-block;margin-left:10%;">  <?= $ninja->getName()?></div>
                                 <div style="display:inline-block;position:absolute;right:20px;"><?= $ninja->getconvertManacost() ?></div>
@@ -159,7 +159,26 @@ $countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFour
                             <?php endif?>                                
                             <?php endforeach ?>
 
-                            <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-image: url(./../public/assets/img/bgGrey.jpg);font-size:large">Terrains</div>                            
+                            <div class="titreList" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-color:#18171bde;font-size:large">Artefacts</div>                            
+                            <?php foreach ($findDeck as $ninja): ?> 
+                                <?php if($ninja->getType()=="Artefact"):?>     
+                                <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;background-image:  url(../public/assets/img/Artefact/<?= $ninja->getPicture() ?>.jpg);height: 6%;background-size:45vh">
+                                <div class="nameDeckList" id="<?= $ninja->getType() ?>/<?= $ninja->getPicture() ?>.jpg"style="display:inline-block;margin-left:10%;">  <?= $ninja->getName()?></div>
+                                <div style="display:inline-block;position:absolute;right:20px;"><?= $ninja->getconvertManacost() ?></div>
+                                <div class="rarityBall <?= $ninja->getRarity() ?>"></div>                                
+                                    <div>
+                                        <form class="deckForm" action="" method="POST" class="mt-5">
+                                            <a value="<?=$ninja->getId()?>" href="<?= $router->generate('decks-deckPost',['deck'=>$currentDeck]) ?>">
+                                            <div style="display:none;" class="pretty p-default pretty2"><input type="checkbox" name='id' value="<?=$ninja->getId()?>" checked /><div class="state p-danger"><label></label></div></div>                        
+                                            <input class ="btn btn-danger" value ="X" style="color: red;bottom: -8px; left: -10px;" type="submit" src="../public/assets/img/del.jpg">
+                                            </a>
+                                        </form>
+                                    </div>                                                      
+                            </div>  
+                            <?php endif?>                                
+                            <?php endforeach ?>
+
+                            <div class="titreList" style="flex-wrap:unset;display:flex;position:relative;height: 6%;background-size:45vh;justify-content: center;background-color:#18171bde;font-size:large">Terrains</div>                            
                             <?php foreach ($findDeck as $ninja): ?> 
                                 <?php if($ninja->getType()=="Terrain"):?>     
                                 <div class="cardListDeck" style="flex-wrap:unset;display:flex;position:relative;background-image:  url(../public/assets/img/<?= $ninja->getType() ?>/<?= $ninja->getPicture() ?>.jpg);height: 6%;background-size:45vh">
@@ -251,6 +270,17 @@ $countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFour
                                     <div style="box-sizing: border-box;" class="liCrea">
                                     <?php foreach ($findDeck as $card):?>
                                             <?php if ($card->getType()=="Enchantements"):?>
+                                            <li class="listManuscrit"> <div class="rarityBall <?= $card->getRarity() ?>" style="position:unset"> </div><?= $card->getName()?><div class="detailDeck"style ="width:1vh;display:inline-flex;"> <?= $card->getconvertManacost() ?></div></li>
+                                            <?php endif?>
+                                        <?php endforeach ?>
+                                    </div>
+                                </div>
+
+                                <div style="box-sizing: border-box;width:100%" >   
+                                    <h4><img class="carteTypes" style="width:unset;height: 3VH;"src="../public/assets/img/icone/planeswalkers.png" alt=""> x<?= count($planeswalkers)?></h4>
+                                    <div style="box-sizing: border-box;" class="liCrea">
+                                    <?php foreach ($findDeck as $card):?>
+                                            <?php if ($card->getType()=="Planeswalkers"):?>
                                             <li class="listManuscrit"> <div class="rarityBall <?= $card->getRarity() ?>" style="position:unset"> </div><?= $card->getName()?><div class="detailDeck"style ="width:1vh;display:inline-flex;"> <?= $card->getconvertManacost() ?></div></li>
                                             <?php endif?>
                                         <?php endforeach ?>

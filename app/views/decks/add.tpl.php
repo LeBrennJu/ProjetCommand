@@ -1,11 +1,11 @@
-<?php dump($viewData)?>
+
 <div class="wrapperAdd">
-    <div style="display:flex;flex-direction:column">
+    <div style="display:flex;flex-direction:column;margin-top: 1%;margin-bottom: 1%;">
         <div class="imgGallery" style="width:15%">
-        <img class="carteTypes addDeckImg"  alt="">  
+        <img class="carteTypes addDeckImg" style="background-color: #ff000029;"  alt="">  
         </div>
-        <div class="imgGallery2" style="width:15%">
-        <img class="carteTypes addDeckImg2"  alt="">  
+        <div class="imgGallery2" style="width:15%;">
+        <img class="carteTypes addDeckImg2" style="background-color: #ff000029;"  alt="">  
         </div>
     </div>
         <div class="container my-4" style="width: 50%">
@@ -54,7 +54,7 @@
                 
             </form>
             
-            <div class="backgroundGallery" style="width:20%">
+            <div class="backgroundGallery" style="width:20%;background-color: #ff000029;border-right:1px solid; border-left: 1px solid;height: fit-content;margin-top: 5%;">
                 <img class="galleryBack" style="width: 100%;"alt="">  
             </div>
             

@@ -43,19 +43,8 @@ class Decks extends CoreModel
         
         $pdo = Database::getPDO();
         $sql = "
-        select * from `artefact` where `deck`='$deck'
-        union
-        select * from  `enchantement` where `deck`='$deck'
-        union 
-        select * from  `ephemere` where `deck`='$deck'
-        union
-        select * from  `rituel` where `deck`='$deck'
-        union
-        select * from  `lands` where `deck`='$deck'
-        union
-        select * from  `creature` where `deck`='$deck'
-        union
-        select * from  `planeswalkers` where `deck`='$deck'
+        select * from `cards` where `deck`='$deck'
+        
         
         order by `color_id`,`manacost`,`id`"
         ;
@@ -97,9 +86,9 @@ class Decks extends CoreModel
         $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS,'App\models\Decks');
         return $results;
     }
-    public function findCard($type,$id)
+    public function findCard($id)
     {
-        $sql="SELECT*FROM `$type` WHERE `id` = " . $id;
+        $sql="SELECT*FROM `cards` WHERE `id` = " . $id;
         $pdo = Database::getPDO();
         $pdoStatement = $pdo->query($sql);
         $results = $pdoStatement->fetchObject(self::class);
@@ -158,7 +147,7 @@ class Decks extends CoreModel
     {
         $pdo = Database::getPDO();
         $sql = "
-        select * from `artefact` where `deck`='$deck' and color_id='6'
+        select * from `cards` where `deck`='$deck' and color_id='6'
         "
         ;
         $pdoStatement = $pdo->query($sql);

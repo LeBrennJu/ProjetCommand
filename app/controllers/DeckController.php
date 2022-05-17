@@ -49,6 +49,7 @@ class DeckController extends CoreController
     }
     public function deckPost($deck)
     {
+        
         $id=$_POST['id'];
         global $router;
         $sql=" DELETE FROM $deck WHERE `id` = '$id' " ;
@@ -137,11 +138,12 @@ class DeckController extends CoreController
         $listeDeck=$select->allDeck();
         $this->show('decks/update',['selectCard'=>$selectCard,'listeDeck'=>$listeDeck]);
     }
-    public function deckUpdatePost($type,$id)
+    public function deckUpdatePost($id)
     {
+        
         global $router;
         $select=new Decks();
-        $selectCard=$select->findCard($type,$id);
+        $selectCard=$select->findCard($id);
         
         $name=addslashes($selectCard->getName());
         $color_id=$selectCard->getColor_id();
@@ -171,7 +173,7 @@ class DeckController extends CoreController
         $texte3=addslashes($selectCard->getTexte3());
 
         
-        $deckName=$_POST['name'];
+        $deckName=$_POST['deck'];
         $pdo = Database::getPDO();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "INSERT INTO $deckName (
