@@ -23,7 +23,167 @@ $countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFour
 </h1>
 
         <div class="wrapperDeck" style="justify-content:center;margin-left: 2%;margin-right: 2%;">
+
+           
+                <div style="font: 0.625rem arial, sans-serif;color: #fff;width: 195px;background-color: rgba(0, 0, 0, 0.5);border-collapse: collapse;border-radius: 4px;margin-right:1%;height: 317px;overflow: scroll;">
+            <table style="width: 100%;">
+                <thead style="">
+                    <!-- <------------------COMMANDANTS------------------> 
+                <tr style="border-bottom: 1px solid black;box-shadow: rgb(255 106 0 / 44%) 0px 0px 5px;margin-bottom: 8px;">
+                        <td class="color<?= $paramDeck->getColor_id() ?>" style="width: 32px;padding:2px;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/commandants/<?= $paramDeck->getCommandant() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $paramDeck->getNamecommandant() ?> <?= $paramDeck->getConvertmanacostcommandant() ?> </div></td>
+                        <td class="<?= $paramDeck->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div>1</div></td>
+                    </tr>
+                                                        <!-- <-----------------TYPES-----------> 
+                    <!-- <-----------CREATURE--------------> 
+                    <?php if($creatures!=[]) :?>
+                    <tr style>
+                        <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/creature.png"  alt=""> </div></td>
+                        <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
+                    </tr>
+                    <?php endif ?>
+                <?php foreach ($findDeck as $card):?>
+                    <?php if($card->getType()=="Creature"): ?>
+                    <tr style="border-bottom: 1px solid black;">
+                    
+                        <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
+                        <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
+                    
+                    </tr>
+                    <?php endif; ?>
+                    <?php endforeach ?>
+                    <!-- <-----------EPHEMERE--------------> 
+                    <?php if($ephemeres!=[]) :?>
+                    <tr style >
+                        <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/ephemere.png"  alt=""> </div></td>
+                        <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
+                    </tr>
+                    <?php endif ?>
+                <?php foreach ($findDeck as $card):?>
+                    <?php if($card->getType()=="Ephemere"): ?>
+                    <tr style="border-bottom: 1px solid black;">
+                    
+                        <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
+                        <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
+                    
+                    </tr>
+                    <?php endif; ?>
+                    <?php endforeach ?>
+                    <!-- <-----------RITUELS--------------> 
+                    <?php if($rituels!=[]) :?>
+                    <tr style>
+                        <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/rituel.png"  alt=""> </div></td>
+                        <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
+                    </tr>
+                <?php endif ?>
+                <?php foreach ($findDeck as $card):?>
+                    <?php if($card->getType()=="Rituel"): ?>
+                    <tr style="border-bottom: 1px solid black;">
+                    
+                        <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
+                        <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
+                    
+                    </tr>
+                    <?php endif; ?>
+                    <?php endforeach ?>
+                    <!-- <-----------ENCHANTEMENTS--------------> 
+                    <?php if($enchantements!=[]) :?>
+                    <tr style>
+                        <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/enchantement.png"  alt=""> </div></td>
+                        <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
+                    </tr>
+                    <?php endif ?>
+                <?php foreach ($findDeck as $card):?>
+                    <?php if($card->getType()=="Enchantements"): ?>
+                    <tr style="border-bottom: 1px solid black;">
+                    
+                        <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
+                        <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
+                    
+                    </tr>
+                    <?php endif; ?>
+                    <?php endforeach ?>
+                    <!-- <-----------PLANESWALKERS--------------> 
+                    <?php if($planeswalkers!=[]) :?>
+                    <tr style>
+                        <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/planeswalkers.png"  alt=""> </div></td>
+                        <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
+                    </tr>
+                <?php endif ?>
+                <?php foreach ($findDeck as $card):?>
+                    <?php if($card->getType()=="Planeswalkers"): ?>
+                    <tr style="border-bottom: 1px solid black;">
+                    
+                        <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
+                        <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
+                    
+                    </tr>
+                    <?php endif; ?>
+                    <?php endforeach ?>
+                    <!-- <-----------ARTEFACTS--------------> 
+                    <?php if($artefact!=[]) :?>
+                    <tr style>
+                        <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/artefact.png"  alt=""> </div></td>
+                        <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
+                    </tr>
+                        <?php endif ?>
+                <?php foreach ($findDeck as $card):?>
+                    <?php if($card->getType()=="Artefact"): ?>
+                    <tr style="border-bottom: 1px solid black;">
+                    
+                        <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
+                        <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
+                    
+                    </tr>
+                    <?php endif; ?>
+                    <?php endforeach ?>
+                    <!-- <-----------TERRAINS--------------> 
+                    
+                    <tr style>
+                        <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/terrain.png"  alt=""> </div></td>
+                        <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
+                    </tr>
                 
+                <?php foreach ($findDeck as $card):?>
+                    <?php if($card->getType()=="Terrain"): ?>
+                    <tr style="border-bottom: 1px solid black;">
+                    
+                        <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
+                        <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
+                        <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
+                    
+                    </tr>
+                    <?php endif; ?>
+                    <?php endforeach ?>
+                </thead>
+            </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div class="commandant <?= $paramDeck->getName()?>" style="background-image: url(./../public/assets/img/<?= $paramDeck->getImage()?>.jpg);">
                         <div class="box">
                             <p class="click">ZOOM</p>
@@ -315,150 +475,5 @@ $countOne=count($one);$countTwo=count($two);$countThree=count($three);$countFour
 <!------------------------------------------------------------------------------------------- DECKLIST BLACK  --------------------------------------------------------------------------------------->
 
             
-<div style="font: 0.625rem arial, sans-serif;color: #fff;width: 195px;background-color: rgba(0, 0, 0, 0.5);border-collapse: collapse;border-radius: 4px;position: absolute;left: 48%;top:124%">
-    <table style="width: 100%;">
-        <thead style="">
-            <!-- <------------------COMMANDANTS------------------> 
-        <tr style="border-bottom: 1px solid rgba(169,169,169,0.2);box-shadow: rgb(255 106 0 / 44%) 0px 0px 5px;margin-bottom: 8px;">
-                <td class="color<?= $paramDeck->getColor_id() ?>" style="width: 32px;padding:2px;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/commandants/<?= $paramDeck->getCommandant() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $paramDeck->getNamecommandant() ?> <?= $paramDeck->getConvertmanacostcommandant() ?> </div></td>
-                <td class="<?= $paramDeck->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div>1</div></td>
-            </tr>
-                                                <!-- <-----------------TYPES-----------> 
-            <!-- <-----------CREATURE--------------> 
-            <?php if($creatures!=[]) :?>
-            <tr style>
-                <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/creature.png"  alt=""> </div></td>
-                <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
-            </tr>
-            <?php endif ?>
-        <?php foreach ($findDeck as $card):?>
-             <?php if($card->getType()=="Creature"): ?>
-            <tr style="border-bottom: 1px solid rgba(169,169,169,0.2);">
-            
-                <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
-                <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
-            
-            </tr>
-            <?php endif; ?>
-            <?php endforeach ?>
-            <!-- <-----------EPHEMERE--------------> 
-            <?php if($ephemeres!=[]) :?>
-            <tr style>
-                <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/ephemere.png"  alt=""> </div></td>
-                <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
-            </tr>
-            <?php endif ?>
-        <?php foreach ($findDeck as $card):?>
-             <?php if($card->getType()=="Ephemere"): ?>
-            <tr style="border-bottom: 1px solid rgba(169,169,169,0.2);">
-            
-                <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
-                <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
-            
-            </tr>
-            <?php endif; ?>
-            <?php endforeach ?>
-            <!-- <-----------RITUELS--------------> 
-            <?php if($rituels!=[]) :?>
-            <tr style>
-                <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/rituel.png"  alt=""> </div></td>
-                <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
-            </tr>
-           <?php endif ?>
-        <?php foreach ($findDeck as $card):?>
-             <?php if($card->getType()=="Rituel"): ?>
-            <tr style="border-bottom: 1px solid rgba(169,169,169,0.2);">
-            
-                <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
-                <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
-            
-            </tr>
-            <?php endif; ?>
-            <?php endforeach ?>
-            <!-- <-----------ENCHANTEMENTS--------------> 
-            <?php if($enchantements!=[]) :?>
-            <tr style>
-                <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/enchantement.png"  alt=""> </div></td>
-                <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
-            </tr>
-            <?php endif ?>
-        <?php foreach ($findDeck as $card):?>
-             <?php if($card->getType()=="Enchantements"): ?>
-            <tr style="border-bottom: 1px solid rgba(169,169,169,0.2);">
-            
-                <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
-                <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
-            
-            </tr>
-            <?php endif; ?>
-            <?php endforeach ?>
-            <!-- <-----------PLANESWALKERS--------------> 
-            <?php if($planeswalkers!=[]) :?>
-            <tr style>
-                <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/planeswalkers.png"  alt=""> </div></td>
-                <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
-            </tr>
-           <?php endif ?>
-        <?php foreach ($findDeck as $card):?>
-             <?php if($card->getType()=="Planeswalkers"): ?>
-            <tr style="border-bottom: 1px solid rgba(169,169,169,0.2);">
-            
-                <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
-                <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
-            
-            </tr>
-            <?php endif; ?>
-            <?php endforeach ?>
-            <!-- <-----------ARTEFACTS--------------> 
-            <?php if($artefact!=[]) :?>
-            <tr style>
-                <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/artefact.png"  alt=""> </div></td>
-                <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
-            </tr>
-                <?php endif ?>
-        <?php foreach ($findDeck as $card):?>
-             <?php if($card->getType()=="Artefact"): ?>
-            <tr style="border-bottom: 1px solid rgba(169,169,169,0.2);">
-            
-                <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
-                <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
-            
-            </tr>
-            <?php endif; ?>
-            <?php endforeach ?>
-            <!-- <-----------TERRAINS--------------> 
-            
-            <tr style>
-                <td style="width: 32px;padding:0;white-space:nowrap;"><div style="background-image:  url(../public/assets/img/bgGrey.jpg);height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="background-image:  url(../public/assets/img/bgGrey.jpg);width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><img style="margin-left: 40%;width: 24px;height: 26px;"src="../public/assets/img/icone/terrain.png"  alt=""> </div></td>
-                <td class style="width: 38px; text-align: center;background-image:  url(../public/assets/img/bgGrey.jpg);border-right:unset"><div></div></td>
-            </tr>
-           
-        <?php foreach ($findDeck as $card):?>
-             <?php if($card->getType()=="Terrain"): ?>
-            <tr style="border-bottom: 1px solid rgba(169,169,169,0.2);">
-            
-                <td class="color<?= $card->getColor_id() ?>"style="width: 32px;padding:2px;white-space:nowrap;padding-bottom:unset"><div style="box-sizing:border-box;background-image:  url(../public/assets/img/<?= $card->getType() ?>/<?= $card->getPicture() ?>.jpg);width: 30px;height: 26px;background-position: top -15px left 50%;background-size: 70px 95px;"></div></td>
-                <td class="deckListImg"style="padding-left: 2px;width: 123px;max-width: 123px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><div style="overflow: hidden;min-width: 0;text-overflow: ellipsis;white-space: nowrap;"><?= $card->getName() ?> <?= $card->getconvertManacost() ?> </div></td>
-                <td class="<?= $card->getRarity() ?>"style="width: 38px; text-align: center;background-color:#18171bde;border-left:1px solid"><div><?php if($card->getNinjacount()!=""): echo $card->getNinjacount() ?><?php else :?>1<?php endif;?></div></td>
-            
-            </tr>
-            <?php endif; ?>
-            <?php endforeach ?>
-        </thead>
-    </table>
-</div>
+
 
