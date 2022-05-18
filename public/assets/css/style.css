@@ -304,6 +304,18 @@ filter: brightness(1.75);
 .rarityBall.Mythique{
     background-color: #d06d34;
 }
+.Rare{
+    border-right: 1px solid #ffd700; 
+}
+.Commun{
+    border-right: 1px solid #000;
+}
+.Mythique{
+    border-right: 1px solid  #d06d34;
+}
+.Peu.commune{
+    border-right: 1px solid silver;
+}
 /*<--------------------------------LISTE DECKS------------------------------->*/
 .listDeckManuscrit{
 display: inline-flex;
@@ -448,6 +460,33 @@ h4{
 .titreDeck:hover{
     pointer-events: none;
     cursor: unset;
+}
+.deckListImg img.imgDetail{
+    width: 1vh;
+    height: 1vh;
+}
+.deckListImg img.valeurMana{
+    width: 1vh;
+    height: 1vh;
+}
+/*<------------------------------new style deck-------------------------------------------->*/
+tr:hover{
+    background-color: #ff000029;
+}
+.color1{
+    background: rgb(82, 81, 74);
+}
+.color3{
+    background: rgb(250, 243, 236);
+}
+.color4{
+    background: rgb(8, 130, 198) ;
+}
+.color6{
+    background: grey;
+}
+.color7{
+    background: linear-gradient(to right, rgb(8, 130, 198) 30%, rgb(82, 81, 74) 70%);
 }
 /*<---------------------------------ADD DECK-------------------------->*/
 .wrapperAdd{

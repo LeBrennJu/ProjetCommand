@@ -53,6 +53,9 @@ class CoreModel
     public $color5;
     public $commandant;
     public $commandant2;
+    public $textcommandant;
+    public $namecommandant;
+    public $convertmanacostcommandant;
     
 
     
@@ -771,6 +774,66 @@ class CoreModel
     public function setTexte3($texte3)
     {
         $this->texte3 = $texte3;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of textcommandant
+     */ 
+    public function getTextcommandant()
+    {
+        return $this->textcommandant;
+    }
+
+    /**
+     * Set the value of textcommandant
+     *
+     * @return  self
+     */ 
+    public function setTextcommandant($textcommandant)
+    {
+        $this->textcommandant = $textcommandant;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of namecommandant
+     */ 
+    public function getNamecommandant()
+    {
+        return $this->namecommandant;
+    }
+
+    /**
+     * Set the value of namecommandant
+     *
+     * @return  self
+     */ 
+    public function setNamecommandant($namecommandant)
+    {
+        $this->namecommandant = $namecommandant;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of convertmanacostcommandant
+     */ 
+    public function getConvertmanacostcommandant()
+    {
+        return $this->convertmanacostcommandant;
+    }
+
+    /**
+     * Set the value of convertmanacostcommandant
+     *
+     * @return  self
+     */ 
+    public function setConvertmanacostcommandant($convertmanacostcommandant)
+    {
+        $this->convertmanacostcommandant = $convertmanacostcommandant;
 
         return $this;
     }
